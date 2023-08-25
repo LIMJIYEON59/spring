@@ -1,4 +1,4 @@
-package kh.lcalss.db1.member.dao;
+package kh.lclass.db1.board.model.dao;
 
 import java.util.List;
 
