@@ -4,7 +4,4 @@
 <select id="selectList" resultType="MemberVo">
 	select mid, mname, memail, mpwd from member
 </select>
-<select id="selectOne" resultType="MemberVo" parameterType="String"> <!-- String으로 받으니깐 -->
-	select mid, mname, memail, mpwd from member where pk=#{pk}
-</select>
 </mapper>

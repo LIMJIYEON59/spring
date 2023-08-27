@@ -17,7 +17,7 @@ public class BoardService {
 	public List<BoardVo> selectList() throws Exception{
 		return boardDao.selectList();
 	}
-	public BoardDao selectOne(int bno) throws Exception {
+	public BoardVo selectOne(int bno) throws Exception {
 		return boardDao.selectOne(bno);
 	}
 	@Transactional //insert가 많을 거라 @넣기
@@ -32,7 +32,7 @@ public class BoardService {
 		//		}
 		}
 		return result;
-	}
+	} 
 	
 	public int update(BoardVo vo) throws Exception {
 		return boardDao.update(vo);
