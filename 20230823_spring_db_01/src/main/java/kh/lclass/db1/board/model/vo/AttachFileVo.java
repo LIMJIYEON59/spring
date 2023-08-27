@@ -1,4 +1,4 @@
-package kh.lcalss.db1.board.model.vo;
+package kh.lclass.db1.board.model.vo;
 
 import lombok.Data;
 

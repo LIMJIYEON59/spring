@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kh.lcalss.db1.board.model.vo.BoardVo;
 import kh.lclass.db1.board.model.dao.BoardDao;
+import kh.lclass.db1.board.model.vo.BoardVo;
 
 @Service
 public class BoardService {

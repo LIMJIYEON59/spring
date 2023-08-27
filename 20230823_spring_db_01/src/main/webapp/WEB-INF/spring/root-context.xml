@@ -26,12 +26,12 @@
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>	<!-- xml경로 적어주기 -->
 	</bean>
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
-		<constructor-arg ref="sqlSessionFactory"/>	<!-- 여기서는 ref를 적는다. 위에 id이름을 적어준다. -->
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>	<!-- 여기서는 ref를 적는다. 위에 id이름을 적어준다. -->
 	</bean>
 	<!-- Transaction Manager commit/rollback -->
-	<bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="TransactionManager"> 
+	<bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager"> 
 		<!-- 2가지 방법: <property name="dataSource" ref="dataSource"  -->
-		<constructor-arg ref="dataSource"/>	<!-- 생성자?생성함 -->
+		<constructor-arg name="dataSource" ref="dataSource"/>	<!-- 생성자?생성함 -->
 	</bean>
 	<!-- @Transactional 사용되는 코드를 AOP통해서 설정함 TODO -->
 	<tx:annotation-driven/>

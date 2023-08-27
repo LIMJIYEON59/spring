@@ -1,4 +1,4 @@
-package kh.lcalss.db1.member.model.dao;
+package kh.lclass.db1.member.model.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kh.lcalss.db1.member.model.vo.MemberVo;
+import kh.lclass.db1.member.model.vo.MemberVo;
 
 @Repository("memberDao")
 public class MemberDao {

@@ -1,12 +1,12 @@
-package kh.lcalss.db1.member.model.service;
+package kh.lclass.db1.member.model.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kh.lcalss.db1.member.model.dao.MemberDao;
-import kh.lcalss.db1.member.model.vo.MemberVo;
+import kh.lclass.db1.member.model.dao.MemberDao;
+import kh.lclass.db1.member.model.vo.MemberVo;
 
 
 @Service

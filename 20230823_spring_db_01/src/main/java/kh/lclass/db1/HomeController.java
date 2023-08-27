@@ -1,4 +1,4 @@
-package kh.lcalss.db1;
+package kh.lclass.db1;
 
 import java.text.DateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package kh.lcalss.db1.member.controller;
+package kh.lclass.db1.member.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kh.lcalss.db1.member.model.service.MemberService;
-import kh.lcalss.db1.member.model.vo.MemberVo;
+import kh.lclass.db1.member.model.service.MemberService;
+import kh.lclass.db1.member.model.vo.MemberVo;
 
 @Controller 
 public class MemberController {

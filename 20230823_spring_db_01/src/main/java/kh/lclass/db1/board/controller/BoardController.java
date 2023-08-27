@@ -1,4 +1,4 @@
-package kh.lcalss.db1.board.controller;
+package kh.lclass.db1.board.controller;
 
 import java.util.Map;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kh.lcalss.db1.board.model.vo.BoardVo;
 import kh.lclass.db1.board.model.service.BoardService;
+import kh.lclass.db1.board.model.vo.BoardVo;
 
 @Controller
 @RequestMapping("/board") // <-이렇게 적으면 @GetMapping("/board/get") 앞에 board 안 적어도됨(소문자)

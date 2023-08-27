@@ -1,4 +1,4 @@
-package kh.lcalss.db1.member.model.vo;
+package kh.lclass.db1.member.model.vo;
 
 import org.springframework.stereotype.Component;
 
