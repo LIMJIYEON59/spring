@@ -4,10 +4,14 @@
 	<select id="selectList" resultType="BoardVo">
 		select * from board
 	</select>
-	<select id="selectOne" resultType="BoardVo" parameterType="BoardVo"><!-- #이 있으면 무조건 parameterType -->
+	<select id="selectOne" resultType="BoardVo" parameterType="_int"><!-- #이 있으면 무조건 parameterType -->
 		select * from board where bno=#{bno}
 	</select>
-	<insert id="insertboard" parameterType="_int">
-		insert into BOARD values (#{bno},#{btitle},#{bcontent},#{bwriteDate},#{mid},#{bref},#{breLevel},#{breStep})
+	
+	<insert id="insert" parameterType="BoardVo">
+		<selectKey keyProperty="bno" resultType="_int" order="BEFORE">
+			select SEQ_BOARD_BNO.nextval nextval from dual
+		</selectKey>
+		insert into BOARD values (#{bno},#{btitle},#{bcontent},default,#{mid},#{bno}, 0,0)
 	</insert>
 </mapper>

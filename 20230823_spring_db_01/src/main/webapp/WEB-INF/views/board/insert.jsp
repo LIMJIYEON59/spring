@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script>
+	var msg = '${msg}';
+	if(msg){
+		alter(msg);
+	}
+</script>
 <form action="${pageContext.request.contextPath }/board/insert" method="post">
 	제목:<input type="text" name="btitle"><br>
 	내용:<input type="text" name="bcontent"><br>
