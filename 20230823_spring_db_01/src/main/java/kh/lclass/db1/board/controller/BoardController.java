@@ -1,13 +1,12 @@
 package kh.lclass.db1.board.controller;
 
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+
+import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,7 +50,8 @@ public class BoardController {
 	}
 
 	@GetMapping("/get")
-	public String get(Model model
+	public String get(
+			Model model
 	// JSP -> Controller 데이터
 	// 방법 1 ,HttpServletRequest request
 			, int bno // 방법 2
@@ -83,6 +83,7 @@ public class BoardController {
 												// 않음)
 			BoardVo vo
 			, String btitle
+			, Principal principal
 			) {
 
 		String viewPage = "redirect:/"; // 메인페이지?
@@ -123,9 +124,10 @@ public class BoardController {
 		return viewPage;
 	}
 
-	@ExceptionHandler
-	public void e() {
-
-	}
+	/*
+	 * @ExceptionHandler public void e() {
+	 * 
+	 * }
+	 */
 
 }

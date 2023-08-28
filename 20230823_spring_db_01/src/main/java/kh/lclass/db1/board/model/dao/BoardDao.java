@@ -13,7 +13,6 @@ public class BoardDao {
 
 	@Autowired
 	private SqlSession sqlSession;
-
 	// throws Exception: 예외처리 오류 방지(500)
 	public List<BoardVo> selectList() throws Exception {// 이 위로 가서 오류 방지(service->controller 결국 controller에서 최종 처리됨)
 		return sqlSession.selectList("board.selectList");// 여기서 오류 발생하면
@@ -25,9 +24,9 @@ public class BoardDao {
 
 	// insert시 selectKey를 이용해 PK 값이 추가되어있는 자료형을 리턴한다?
 	public BoardVo insert(BoardVo vo) throws Exception {
-		System.out.println("[insert before]"+vo);
+		//System.out.println("[insert before]"+vo);
 		int result = sqlSession.insert("board.insert", vo);
-		System.out.println("[insert after]"+vo);
+		//System.out.println("[insert after]"+vo);
 		return vo;
 	}
 
