@@ -63,7 +63,7 @@
        		<exclude-mapping path="/findid"/>
        		<exclude-mapping path="/findpwd"/>
        		<exclude-mapping path="/shop/**"/> <!-- shop이라고 시작하는 것들은 인터셉터로 안 걸겠다.  -->
-       		<beans:ref bean="loginInterceptor"/>
+       		<beans:ref bean="LoginInterceptor"/>
         </interceptor>           	
 	</interceptors>
 
