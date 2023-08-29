@@ -18,8 +18,7 @@ public class AdviceLog {
 	// @Pointcut("execution(타켓메소드)")
 	// .. 매개변수 없거나 여러개 있거나..
 	// * <-이거는 1개 이상일 때 쓴다.
-	@Pointcut("execution(public * kh.lclass.db1..*Dao.*(..))") // 메소드안에는 접근제한자, 리턴자료형(*), 클래스명, 메소드명 //*Dao 블라블라 클래스명이라는
-																// 소리
+	@Pointcut("execution(public * kh.lclass.db1..*Dao.*(..))") // 메소드안에는 접근제한자, 리턴자료형(*), 클래스명, 메소드명 //*Dao 블라블라 클래스명이라는 소리이다.
 	public void daoPointCut() {
 	}
 
@@ -65,7 +64,7 @@ public class AdviceLog {
 		robj = pjp.proceed();	// 타겟메소드 실행!!! Around 중요 메소드
 		
 		stopwatch.stop();
-		logger.debug("▷▷[ Dao ▷ "+stopwatch.getTotalTimeMillis()+"ms]" + robj);
+		logger.debug("▷▷▷[Dao ▷ "+stopwatch.getTotalTimeMillis()+"ms]"+robj);
 		return robj; // 타겟메소드를 호출한 메소드에 return함
 	}
 
@@ -94,9 +93,10 @@ public class AdviceLog {
 		for (int i = 0; i < args.length; i++) {
 			logger.debug("▷▷-args[" + i + "] " + args[i] + "");
 		}
-		
+		StopWatch stopwatch = new StopWatch();
+		stopwatch.start();
 		robj = pjp.proceed(); //타겟메소드로부터 return 값을 받아 저장할 공간
-		logger.debug("▷▷[ Ctr ▷]" + robj);
+		logger.debug("▷[Ctr ▷ "+stopwatch.getTotalTimeMillis()+"ms]"+robj);
 		return robj; // 타겟메소드를 호출한 메소드에 return함
 	}
 }
