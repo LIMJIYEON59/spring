@@ -7,5 +7,11 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.7.xsd">
 
-
+<!-- 	<security:http>
+		<security:intercept-url pattern="/resources/**" access="permitAll"/>
+		<security:intercept-url pattern="/error/**" access="permitAll"/>
+		<security:intercept-url pattern="/board/**" access="permitAll"/>
+		<security:intercept-url pattern="/member/**" access="hasRole('R_M')"/>
+		<security:intercept-url pattern="/admin/**" access="hasRole('R_A')"/>
+	</security:http> -->
 </beans>
