@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
+//@Component("loginInterceptor")
 //상속 받음
 public class LoginInterceptor implements HandlerInterceptor{
 	
@@ -20,7 +21,6 @@ public class LoginInterceptor implements HandlerInterceptor{
 		}
 		
 		// return true : 타겟URL의 mapping된 타겟메소드 호출하러감.
-		
 		//return HandlerInterceptor.super.preHandle(request, response, handler);
 		return true; //위에 코드 대신에 씀
 	}
