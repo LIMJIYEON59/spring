@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,16 +16,21 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.lclass.db1.board.model.service.BoardService;
 import kh.lclass.db1.board.model.vo.BoardVo;
+import kh.lclass.db1.common.FileUpload;
 
 @Controller
 @RequestMapping("/board") // <-이렇게 적으면 @GetMapping("/board/get") 앞에 board 안 적어도됨(소문자)
 public class BoardController {
 	@Autowired
 	private BoardService boardService; // 앞에서 만들어진 걸(객체) 쓰고싶으면 @붙이고 선언만 해주면 끌어다가 쓸 수 있다.
-
+	@Autowired
+	private FileUpload fileUpload;
+	
+	
+	//@RequestMapping(value="/board",method=RequestMethod.) ->풀이름
 	@GetMapping("/list")
 	public ModelAndView list(
-//			  RedirectAttributes rttr, 이렇게 하면 안
+			// RedirectAttributes rttr, 이렇게 하면 안됨
 			String msg2, String msg3, String n1,
 
 			// Controller -> JSP(View) 데이터 전달
@@ -49,16 +55,17 @@ public class BoardController {
 
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/get/{bno}")
 	public String get(
 			Model model
 	// JSP -> Controller 데이터
 	// 방법 1 ,HttpServletRequest request
-			, int bno // 방법 2
-			, String a) throws Exception {
-		System.out.println(bno);
-		System.out.println(a);
-
+			//, int bno // 방법 2
+			//, String a) throws Exception {
+			//방법 3
+			,@PathVariable("bno") int bno
+			)throws Exception{
+		
 		// JSP -> Controller 데이터
 		// 방법 1 int bno = Integer.parseInt(request.getParameter("bno")); //형변환
 

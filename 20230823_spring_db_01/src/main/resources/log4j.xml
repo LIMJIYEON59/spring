@@ -11,7 +11,14 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
-
+	<!-- file appendar  -->
+	<appender name="filedest" class="org.apache.log4j.FileAppender">
+		<param name="file" value="true" />
+			<layout class="org.apache.log4j.PatternLayout">			
+				<param name="DataPattern" value="" />
+				<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
 	<!-- Application Loggers -->
 	<logger name="kh.lcalss.db1">
 		<level value="debug" />

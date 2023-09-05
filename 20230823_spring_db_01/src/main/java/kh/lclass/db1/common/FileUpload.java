@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUpload {
 	
 	// @return : 저장한 파일명
-	public Map<String, String> saveFile(MultipartFile multu, HttpServletRequest req) throws Exception{
+	public Map<String, String> saveFile(MultipartFile multi, HttpServletRequest req) throws Exception{
 		Map<String, String> result = null;
 		String renameFilePath = null;
 		String renameByTime = null;

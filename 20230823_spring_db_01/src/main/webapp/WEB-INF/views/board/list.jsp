@@ -18,6 +18,7 @@
 	}
 </script>
 <h2>Board List</h2>
+<a href="/board/get/${bno }"></a>	<!-- 컨트롤러에서 경로 정하고 여기 jsp에서도 수정하면 -->
 [[
 ${boardList}
 ]]
