@@ -24,7 +24,8 @@ public class BoardDao {
 	public BoardVo selectOne(int bno) throws Exception {
 		return sqlSession.selectOne("board.selectOne", bno);
 	}
-
+	
+	
 	// insert시 selectKey를 이용해 PK 값이 추가되어있는 자료형을 리턴한다?
 	public BoardVo insert(BoardVo vo) throws Exception {
 		//System.out.println("[insert before]"+vo);
