@@ -7,9 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class Board2Controller {
 	
-	@GetMapping("/board")
-	public ModelAndView selectList(ModelAndView mv) {
-		mv.setViewName("/board");
+	@GetMapping("/board2")
+	public ModelAndView board2(ModelAndView mv) {
+		mv.setViewName("board");
 		return mv;
 	}
 

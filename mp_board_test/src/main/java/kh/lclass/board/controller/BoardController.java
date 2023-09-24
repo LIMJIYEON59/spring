@@ -15,7 +15,7 @@ public class BoardController {
 	
 	@GetMapping("/board")
 	public ModelAndView selectList(ModelAndView mv) {
-		mv.setViewName("board"); //setViewName라는 메서드를 이용해서 어떤 뷰를 보여줄지 설정한다.
+		mv.setViewName("/board"); //setViewName라는 메서드를 이용해서 어떤 뷰를 보여줄지 설정한다.
 		return mv;
 	}
 }
