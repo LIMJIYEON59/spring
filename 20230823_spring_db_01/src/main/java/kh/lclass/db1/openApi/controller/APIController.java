@@ -1,4 +1,4 @@
-package com.kh.opendata.controller;
+package kh.lclass.db1.openApi.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,13 +18,13 @@ public class APIController {
 			"ey51rbqUG4nLxm%2FIMXybyk%2FsuSNe95v4aIgn4Ydn0UhcJl91gToKXy7htiiqkWXyGCVxm6xyZpakkO4hk%2FLs3w%3D%3D";
 	
 	@ResponseBody
-	@GetMapping(value="air.do")
+	@GetMapping(value = "/air.do")
 	public String airPollution(String location) throws IOException {
 		String url =  "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
 		
 		url += "?serviceKey=" + serviceKey;
 		url += "&sidoName=" + URLEncoder.encode(location, "UTF-8"); 
-		url += "$returnType=json";
+		url += "&returnType=json";
 		
 		URL requestUrl = new URL(url);
 		HttpURLConnection urlConnection =
@@ -42,4 +42,7 @@ public class APIController {
 		urlConnection.disconnect();
 		return responseText;
 	}
+	/*
+	 * @GetMapping("/index") public String index() { return "index"; }
+	 */
 }

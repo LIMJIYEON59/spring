@@ -23,7 +23,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- base는 저것이고 그것을 기반으로 앞에걸 지정하겠다. 설정들이 다 됨(new해서 만들 필요x) -->
+	<!-- base는 "kh.lclass.db1"이고 이것을 기반으로 @ 설정들이 다 됨(new해서 만들 필요x) -->
 	<context:component-scan base-package="kh.lclass.db1" />
 	
 	<!-- @Aspect AOP annotation scan 쏵 긁어주겠다~-->
