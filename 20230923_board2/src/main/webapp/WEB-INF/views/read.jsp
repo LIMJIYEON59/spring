@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +12,41 @@
 <body>
 	<div>
 	<section id="container">
-				<form role="form" method="post" action=${pageContext.request.contextPath}/insertboard2>
+				<c:when test="${bno != null }">
 					<table>
 						<tbody>
 							<tr>
 								<td>
-									<label for="bno">번호</label><input type="text" id="bno" name="bno"/>
+									${bno.bno}
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="tltie">제목</label><input type="text" id="title" name="title"/>
+									${bno.title}
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="content">내용</label><input type="text" id="content" name="content"/>
+									${bno.content}
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="writer">작성자</label><input type="text" id="writer" name="writer"/>
+									${bno.writer}
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<button type="submit">작성</button>
+									<label for="regdate">작성날짜</label>
+									<fmt:formatDate value="${bno.regdate }" pattern="yyy-MM-dd"/>
 								</td>
 							</tr>
 						</tbody>			
 					</table>
-				</form>
+			</c:when>
 			</section>
 			<a href="list">게시글목록</a>
+			<a href="board">게시글 작성</a>
 		</div>
 </body>
 </html>

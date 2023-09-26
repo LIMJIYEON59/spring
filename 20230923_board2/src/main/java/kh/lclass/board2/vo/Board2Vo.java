@@ -11,7 +11,7 @@ public class Board2Vo {
 	"REGDATE"	DATE	DEFAULT SYSDATE	NOT NULL
 	*/
 	
-	private int bno;
+	private String bno;
 	private String title;
 	private String content;
 	private String writer;
@@ -23,11 +23,11 @@ public class Board2Vo {
 				+ ", regdate=" + regdate + "]";
 	}
 
-	public int getBno() {
+	public String getBno() {
 		return bno;
 	}
 
-	public void setBno(int bno) {
+	public void setBno(String bno) {
 		this.bno = bno;
 	}
 
@@ -62,6 +62,7 @@ public class Board2Vo {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	
 	
 	
 	
