@@ -1,5 +1,7 @@
 package kh.lclass.board2.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +21,7 @@ public class Board2Controller {
 	
 	@GetMapping("/board")
 	public ModelAndView board2(ModelAndView mv) {
-		mv.setViewName("board");
+		mv.setViewName("/board");
 		return mv;
 	}
 	
@@ -29,5 +31,29 @@ public class Board2Controller {
 		boardservice.insert(boardvo);
 		return "redirect:board?BNO=" +boardvo.getBno();
 	}
+	
+	/*
+	 * @GetMapping("/selectListboard2")
+	 * 
+	 * @ResponseBody //데이터를 반환할 떄 public List<Board2Vo> selectList(){
+	 * System.out.println("selectListboard2 들어옴요"); List<Board2Vo> list =
+	 * boardservice.selectList(); return list; }
+	 */
+	@GetMapping("/list")
+	public String selectList(Model model) {
+		List<Board2Vo> list = boardservice.selectList();
+		model.addAttribute("bno");
+		model.addAttribute("list", list);
+		return "list";
+	}
+	
+	@GetMapping("/read")
+	public String selectOne(Model model, String bno) {
+		Board2Vo read = boardservice.selectOne(bno);
+		System.out.println(bno);
+		model.addAttribute("bno", bno);
+		return "read";
+	}
+	
 
 }
