@@ -4,7 +4,7 @@
 
 	<insert id="insert" parameterType="Board2Vo">
 		INSERT INTO MP_BOARD(BNO, TITLE, CONTENT, WRITER)
-		VALUES (MP_BOARD_SEQ.NEXTVAL, #{title}, #{content}, #{writer)
+		VALUES (MP_BOARD_SEQ.NEXTVAL, #{title}, #{content}, #{writer})
 	</insert>
 	
 	<!-- ORDER BY:정렬하겠다. BNO기준으로 DESC 내림차순으로(큰 거->작은 거) -->
@@ -16,9 +16,9 @@
 	
 	<!-- WHERE에 BNO값을 넣어줘서 제목을 클릭했을때 그 번호를 클릭하면 그 번호의 게시물을 조회하게끔 한다. -->
 	<!-- parameterType="String" -->
-	<select id="selectOne"  resultType="Board2Vo"> 
-		SELECT *
+	<select id="read"  resultType="Board2Vo"> 
+		SELECT BNO, TITLE, CONTENT, WRITER, REGDATE
 		FROM MP_BOARD
 		WHERE BNO=#{bno}
-	</select>
+	</select>	
 </mapper>

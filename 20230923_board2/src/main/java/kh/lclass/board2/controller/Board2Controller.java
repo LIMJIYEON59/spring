@@ -48,10 +48,11 @@ public class Board2Controller {
 	}
 	
 	@GetMapping("/read")
-	public String selectOne(Model model, String bno) {
-		Board2Vo read = boardservice.selectOne(bno);
-		System.out.println(bno);
+	public String read(Model model, String bno) {
+		Board2Vo read = boardservice.read(bno);
+		System.out.println("[read]" + bno);
 		model.addAttribute("bno", bno);
+		model.addAttribute("read", read);
 		return "read";
 	}
 	

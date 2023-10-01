@@ -25,8 +25,8 @@ public class Board2ServiceImpl implements Board2Service{
 	}
 
 	@Override
-	public Board2Vo selectOne(String bno) {
-		return boardDao.selectOne(bno);
+	public Board2Vo read(String bno) {
+		return boardDao.read(bno);
 	}
 	
 	

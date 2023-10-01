@@ -8,5 +8,5 @@ public interface Board2Service {
 	
 	public int insert(Board2Vo boardvo);
 	public List<Board2Vo> selectList();
-	public Board2Vo selectOne(String bno);
+	public Board2Vo read(String bno);
 }

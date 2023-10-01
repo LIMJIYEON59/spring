@@ -31,7 +31,9 @@
 									<td><c:out value="${list.bno }"/></td>
 									<td>
 										<%-- <a href="/read?bno=${list.bno}"><c:out value="${list.title }"/></a> --%>
-										<a href="${pageContext.request.contextPath }/read?=${list.bno}"><c:out value="${list.title }"/></a>
+										<a href="${pageContext.request.contextPath }/read?bno=${list.bno}">
+											<c:out value="${list.title }"/>
+										</a>
 									</td>
 									<td><c:out value="${list.content }"/></td>
 									<td><c:out value="${list.writer }"/></td>

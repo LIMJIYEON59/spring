@@ -22,12 +22,13 @@ public class Board2Dao {
 	
 	//게시글 목록 조회
 	public List<Board2Vo> selectList() {
+		System.out.println("[j11]");
 		return sqlSession.selectList("board2.selectList");
 	}
 	
 	//게시글 상세 조회
-	public Board2Vo selectOne(String bno) {
+	public Board2Vo read(String bno) {
 		System.out.println("[j22]"+ bno);
-		return sqlSession.selectOne("board2.selectOne", bno);
+		return sqlSession.selectOne("board2.read", bno);
 	}
 }
