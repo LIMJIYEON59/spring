@@ -2,6 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="board2">
 
+	<update id="update" parameterType="Board2Vo">
+		UPDATE MP_BOARD
+			SET TITLE = #{title},
+				CONTENT = #{content}
+			WHERE BNO = #{bno}
+	</update>
+	
+	<delete id="delete" parameterType="string">
+		DELETE 
+		FROM MP_BOARD
+		WHERE BNO = #{bno}
+	</delete>
+
 	<insert id="insert" parameterType="Board2Vo">
 		INSERT INTO MP_BOARD(BNO, TITLE, CONTENT, WRITER)
 		VALUES (MP_BOARD_SEQ.NEXTVAL, #{title}, #{content}, #{writer})

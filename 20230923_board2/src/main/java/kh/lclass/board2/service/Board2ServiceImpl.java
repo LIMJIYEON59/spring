@@ -28,6 +28,16 @@ public class Board2ServiceImpl implements Board2Service{
 	public Board2Vo read(String bno) {
 		return boardDao.read(bno);
 	}
+
+	@Override
+	public int update(Board2Vo boardvo) {
+		return boardDao.update(boardvo);
+	}
+
+	@Override
+	public int delete(String bno) {
+		return boardDao.delete(bno);
+	}
 	
 	
 }

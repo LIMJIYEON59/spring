@@ -39,6 +39,7 @@ public class Board2Controller {
 	 * System.out.println("selectListboard2 들어옴요"); List<Board2Vo> list =
 	 * boardservice.selectList(); return list; }
 	 */
+	//게시판 목록
 	@GetMapping("/list")
 	public String selectList(Model model) {
 		List<Board2Vo> list = boardservice.selectList();
@@ -46,7 +47,7 @@ public class Board2Controller {
 		model.addAttribute("list", list);
 		return "list";
 	}
-	
+	//게시판 상세정보
 	@GetMapping("/read")
 	public String read(Model model, String bno) {
 		Board2Vo read = boardservice.read(bno);
@@ -54,6 +55,22 @@ public class Board2Controller {
 		model.addAttribute("bno", bno);
 		model.addAttribute("read", read);
 		return "read";
+	}
+	//게시판 수정
+	@PostMapping("/update")
+	@ResponseBody
+	public String update(Board2Vo boardvo) {
+		boardservice.update(boardvo);
+		return "redirect:list";
+	}
+	
+	//게시판 삭제
+	@PostMapping("/delete")
+	@ResponseBody
+	public String delete(Board2Vo boardvo, String bno) {
+		boardservice.delete(boardvo.getBno());
+		return "redirect:list";
+		
 	}
 	
 

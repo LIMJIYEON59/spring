@@ -31,4 +31,14 @@ public class Board2Dao {
 		System.out.println("[j22]"+ bno);
 		return sqlSession.selectOne("board2.read", bno);
 	}
+	
+	//게시물 수정
+	public int update(Board2Vo board2vo) {
+		System.out.println("[j55]");
+		return sqlSession.update("board2.update", board2vo);
+	}
+	
+	public int delete(String bno) {
+		return sqlSession.delete("board2.delete", bno);
+	}
 }
