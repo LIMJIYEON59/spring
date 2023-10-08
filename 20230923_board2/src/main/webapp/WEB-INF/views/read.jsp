@@ -8,26 +8,27 @@
 	 	<title>게시판</title>
 	</head>
 	<script>
-		$(document).redy(function) {
-			var formObj = $("form");
+		$(document).redy(function() {
+			var formObj = $("form[name='readForm']");
 			
 			//수정
 			$(".update_btn").on("click", function()){
 				formObj.attr("action","update");
-				formObj.attr("method", "get");
 				formObj.submit();
 			}
 			
 			//삭제
 			$(".delete_btn").on("click", function(){
 				formObj.attr("action", "delete");
-				formObj.attr("method","post");
 				formObj.submit();
 			})
 			
 			//취소
+			$(".list_btn").on("click", function() {
+				location.href = "list";
+			})
 			
-		}
+		})
 	</script>
 	<body>
 	

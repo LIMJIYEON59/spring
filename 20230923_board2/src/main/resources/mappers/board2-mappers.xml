@@ -3,10 +3,9 @@
 <mapper namespace="board2">
 
 	<update id="update" parameterType="Board2Vo">
-		UPDATE MP_BOARD
-			SET TITLE = #{title},
-				CONTENT = #{content}
-			WHERE BNO = #{bno}
+		UPDATE MP_BOARD SET 
+		TITLE = #{title}, CONTENT = #{content}
+		WHERE BNO = #{bno}
 	</update>
 	
 	<delete id="delete" parameterType="string">
