@@ -38,6 +38,7 @@ public class Board2Dao {
 		return sqlSession.update("board2.update", board2vo);
 	}
 	
+	//게시물 삭제
 	public int delete(String bno) {
 		return sqlSession.delete("board2.delete", bno);
 	}

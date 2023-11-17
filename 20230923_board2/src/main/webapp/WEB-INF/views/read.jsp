@@ -8,27 +8,27 @@
 	 	<title>게시판</title>
 	</head>
 	<script>
-		$(document).redy(function() {
+		$(document).ready(function() {
 			var formObj = $("form[name='readForm']");
 			
 			//수정
-			$(".update_btn").on("click", function()){
-				formObj.attr("action","update");
+			$(".update_btn").on("click", function(){
+				formObj.attr("action","/board2/update");
 				formObj.submit();
-			}
+			});
 			
 			//삭제
 			$(".delete_btn").on("click", function(){
-				formObj.attr("action", "delete");
+				formObj.attr("action", "/board2/delete");
 				formObj.submit();
-			})
+			});
 			
 			//취소
 			$(".list_btn").on("click", function() {
-				location.href = "list";
-			})
+				location.href = "/board2/list";
+			});
 			
-		})
+		});
 	</script>
 	<body>
 	
@@ -77,7 +77,7 @@
 					</table>
 					<div>
 						<button type="submit" class="update_btn">수정</button>
-						<button type="submit" class="delete_btn">삭제</button>
+						<a class="delete_btn">삭제</a>
 						<button type="submit" class="list_btn">목록</button>
 					</div>
 					

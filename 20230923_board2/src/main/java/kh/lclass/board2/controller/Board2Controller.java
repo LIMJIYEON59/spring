@@ -58,7 +58,6 @@ public class Board2Controller {
 	}
 	//게시판 수정
 	@PostMapping("/update")
-	@ResponseBody
 	public String update(Board2Vo boardvo) {
 		boardservice.update(boardvo);
 		return "redirect:list";
@@ -66,9 +65,8 @@ public class Board2Controller {
 	
 	//게시판 삭제
 	@PostMapping("/delete")
-	@ResponseBody
-	public String delete(Board2Vo boardvo, String bno) {
-		boardservice.delete(boardvo.getBno());
+	public String delete(String bno) {
+		boardservice.delete(bno);
 		return "redirect:list";
 		
 	}
