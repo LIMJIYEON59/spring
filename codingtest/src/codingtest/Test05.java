@@ -3,7 +3,7 @@ package codingtest;
 import java.util.Scanner;
 
 //숫자 5개를 입력받아 가장 큰 수를 출력하는 프로그램을 작성하시오.
-public class test05 {
+public class Test05 {
 	public static void main(String[] args) {
 		Scanner sc = null;
 		try {

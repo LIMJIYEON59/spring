@@ -3,7 +3,7 @@ package codingtest;
 import java.util.Scanner;
 
 //월을 입력받아 해당월의 일수를 출력하는 프로그램을 작성하시오.(switch 이용)
-public class test04 {
+public class Test04 {
 	public static void main(String[] args) {
 		Scanner sc = null;
 		try {

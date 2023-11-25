@@ -1,7 +1,7 @@
 package codingtest;
 
 //'abcd' -> 'dbca' 문자열 뒤집기
-public class test01 {
+public class Test01 {
 	public static void main(String[] args) {
 		char[] orgArr = {'a','b','c','d'};
 		System.out.println(orgArr);

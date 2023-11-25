@@ -1,7 +1,7 @@
 package codingtest;
 
 //1부터 100까지 합을 루프문을 이용하여 작성하고, 실행 결과를 출력하시오.
-public class test02 {
+public class Test02 {
 	public static void main(String[] args) {
 		int a =0;
 		int b =0;
